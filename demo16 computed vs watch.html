@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app">
+            <p>{{fullName}}</p>
+        </div>
+        <div id="app2">
+            <p>{{fullName2}}</p>
+        </div>
+
+        <script>
+            var wm = new Vue({
+                el: '#app',
+                data: {
+                    firstName: 'Caroline',
+                    lastName: 'Jin'
+                },
+                computed: {
+                    fullName: function() {
+                        return this.firstName + '_' + this.lastName;
+                    }
+                }
+            });
+
+            var vm = new Vue({
+                el: '#app2',
+                data: {
+                    firstName2: 'Caroline111',
+                    lastName2: 'Jin',
+                    fullName2: 'Caroline_Jin'
+                },
+                watch: {
+                    firstName2: function(val) {
+                        this.fullName2 = val + '_' + this.lastName2
+                    },
+                    lastName2: function(val) {
+                        this.fullName2 = this.firstName2 + '_' + val
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

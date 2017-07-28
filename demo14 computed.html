@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app">
+            <p>{{message}}</p>
+            <p>{{reverseMessage}}</p>
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app', 
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+                computed: {
+                    reverseMessage: function() {
+                        return this.message.split('').reverse().join('');
+                    }
+                }
+            });
+
+            console.log('翻转前的message为' + vm.message);
+            console.log('翻转后的message为' + vm.reverseMessage);
+        </script>
+    </body>
+</html>
