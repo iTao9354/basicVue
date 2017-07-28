@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{todo.text}}
+                </li>
+            </ol>   
+        </div>
+
+        <script>
+            var app4 = new Vue({
+                el: '#app4',
+                data: {
+                    todos: [
+                        {text: '第一个文本'},
+                        {text: '第二个文本'},
+                        {text: '第三个文本'}
+                    ]
+                }
+            });
+            app4.todos.push({text: '第四个文本'});
+        </script>
+    </body>
+</html>

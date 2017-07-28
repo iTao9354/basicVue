@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app3">
+            <p v-if = "seen">现在你看到我了</p>
+            <p v-if = "saw">看到你了</p>
+        </div>
+
+        <script>
+            var app3 = new Vue({
+                el: '#app3',
+                data: {
+                    seen: true,
+                    saw: false
+                }
+            });
+
+            app3.seen = false;
+            app3.saw = true;
+        </script>
+    </body>
+</html>

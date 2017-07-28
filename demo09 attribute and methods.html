@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app9" class="app"></div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app9',
+                data: {
+                    a: 1
+                }
+            });
+
+            console.log(vm.$data);
+            vm.$data === {a: 1};   // true
+
+            alert(vm.$el.className);
+            vm.$el === document.getElementById('app9');  // true
+
+            vm.$watch('a', function(newVal, oldVal) {
+                console.log(vm.a)
+            }, {
+                immediate: true
+            })
+        </script>
+    </body>
+</html>

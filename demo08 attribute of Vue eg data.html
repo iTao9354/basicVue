@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app8"></div>
+
+        <script>
+            var data = {a: 1, b: 2};
+            var vm = new Vue({
+                el: '#app8',
+                data: data
+            });
+            alert(vm.a);
+            //vm.a === data.a;  // true
+
+            // 设置属性会影响到原始数据
+            vm.a = 11;
+            alert(data.a);
+
+            // 反之亦然
+            data.a = 1111;
+            alert(vm.a);
+        </script>
+    </body>
+</html>

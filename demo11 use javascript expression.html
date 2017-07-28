@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app">
+            <p>{{message+22222}}</p>  
+            <p>{{ok ? 'YES' : 'NO'}}</p>
+            <p v-bind:id="id+'12344556'">{{info.split('').reverse().join('')}}</p>
+        </div>
+
+        <script>
+            var aaa = 5;
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    message: 11111,
+                    ok: false,
+                    info: 'Hello My darling!',
+                    id: 'vvv'
+                }
+            });
+
+        </script>
+    </body>
+</html>

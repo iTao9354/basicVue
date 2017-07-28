@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app"></div>
+
+        <script>
+            var vm = new Vue({
+                data: {
+                    a: 1
+                },
+                created: function() {
+                    alert('a is ' + this.a);
+                }
+            });
+        </script>
+    </body>
+</html>
