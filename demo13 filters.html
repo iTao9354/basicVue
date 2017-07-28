@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app">
+            <p>{{message | capitalize}}</p>
+            <p>{{message | capitalize | toArray}}</p>
+            <p>{{message | jointFn(info)}}</p>
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    message: 'hello my darling!',
+                    info: 'Thank you!'
+                },
+                filters: {
+                    capitalize: function(value) {
+                        if(!value) return '';
+                        value = value.toString();
+                        return value.charAt(0).toUpperCase() + value.slice(1);
+                    },
+                    toArray: function(value) {
+                        return value.split(' ');
+                    },
+                    jointFn: function(value1, value2) {
+                        return value1 + ' ' + value2;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
