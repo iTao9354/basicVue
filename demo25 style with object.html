@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+        <div id="app" v-bind:style="{color: colorClass, fontSize: fontClass + 'px'}">
+            测试style内联样式
+        </div>
+
+        <div id="app2" v-bind:style="styleObj">
+            测试style内联样式2222
+        </div>
+    	
+        <div id="app3" v-bind:style="styleObj">
+            测试style内联样式33333
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    colorClass: 'orange',
+                    fontClass: 30
+                }
+            });
+
+            var app2 = new Vue({
+                el: '#app2',
+                data: {
+                    styleObj: {
+                        color: 'blue',
+                        fontSize: '20px'
+                    }
+                }
+            });
+
+            var app3 = new Vue({
+                el: '#app3',
+                data: {
+                    isColor: 'red',
+                    isFont: '40px'
+                },
+                computed: {
+                    styleObj: function() {
+                        return {
+                            color: this.isColor,
+                            fontSize: this.isFont
+                        };
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

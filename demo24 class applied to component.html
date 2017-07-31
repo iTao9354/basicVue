@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .app {
+                display: none;
+            }
+            .app.active {
+                display: block;
+            }
+            .text-danger {
+                color: #f00;
+            }
+        </style>
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <my-component class="app active" v-bind:class="{active2: isActive}"
+                v-bind:todo="message"
+            ></my-component>
+        </div>
+    	
+
+        <script>
+            // 注册组件
+            Vue.component('my-component', {
+                props: ['todo'],     // 用来在注册的组件和根实例之间传递数据
+                template: '<p class="text-danger">{{todo}}</p>'
+            })
+            // 创建根实例
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Hello',
+                    isActive: true
+                }
+            });
+        </script>
+    </body>
+</html>

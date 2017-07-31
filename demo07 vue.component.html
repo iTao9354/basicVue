@@ -16,10 +16,12 @@
         </div>
 
         <script>
+            // 注册组件
             Vue.component('todo-item', {
-                props: ['todo'],
+                props: ['todo'],     // 用来在注册的组件和根实例之间传递数据
                 template: '<li>{{todo.text}}</li>'
             })
+            // 创建根实例
             var app7 = new Vue({
                 el: '#app7',
                 data: {

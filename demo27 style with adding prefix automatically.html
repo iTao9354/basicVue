@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+        <div id="app" v-bind:style="[baseStyles, overridingStyles]">
+            测试style内联样式
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    baseStyles: {
+                        color: 'red',
+                        fontSize: '30px'
+                    },
+                    overridingStyles: {
+                        transform: 'rotate(90deg)'
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
