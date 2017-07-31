@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .app {
+                display: none;
+            }
+            .app.active {
+                display: block;
+            }
+        </style>
+        <script src="plugins/vue.js"></script>
+    </head>
+    <body>
+    	<div id="app" v-bind:class="{app: true, active: isActive, 'text-danger': hasError}">
+            测试class
+            <p v-bind:class="classObj">测试class222</p>
+        </div>
+
+        <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                hasError: true,
+                classObj: {
+                    app: true,
+                    active: true,
+                    'text-danger': false
+                }
+            }
+        });
+        </script>
+    </body>
+</html>
