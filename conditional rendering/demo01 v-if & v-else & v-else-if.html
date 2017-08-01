@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../plugins/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+        	<p v-if="Math.random() > .5">大于0.5</p>
+        	<p v-else-if="Math.random() < .5">小于0.5</p>
+        	<p v-else>等于0.5</p>
+        </div>
+
+        <script>
+        	
+
+        	var app = new Vue({
+        		el: '#app'
+        	});
+        </script>
+    </body>
+</html>

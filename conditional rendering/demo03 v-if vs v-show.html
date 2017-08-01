@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../plugins/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+        	<template v-if="ok">
+        		<h1>Title</h1>
+				<p>Paragraph 1</p>
+				<p>Paragraph 2</p>
+        	</template>
+        	<hr>
+        	<p v-show="ok">需要显示的p</p>
+        	<p v-show="notOk">需要隐藏的p</p>
+        </div>
+
+        <script>
+        	new Vue({
+        		el: '#app',
+        		data: {
+        			ok: true,
+        			notOk: false
+        		}
+        	});
+        </script>
+    </body>
+</html>
