@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../plugins/vue.js"></script>
+    </head>
+    <body>
+        <ul id="app">
+        	<template v-for="item in items">
+        		<li>{{item.text}}</li>
+        		<li class="divider"></li>
+        	</template>
+        </ul>
+
+        <script>
+        	new Vue({
+        		el: '#app',
+        		data: {
+        			items: [
+        				{ id: 1111, text: 'Foo' },
+        				{ id: 2222, text: 'Bar' }
+        			]
+        		}
+        	});
+        </script>
+    </body>
+</html>

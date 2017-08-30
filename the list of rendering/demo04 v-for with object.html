@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../plugins/vue.js"></script>
+    </head>
+    <body>
+        <ul id="app">
+			<li v-for="value in object">
+				{{value}}
+			</li>
+			<hr>
+			<li v-for="(value, key) in object">
+				{{key}} : {{value}}
+			</li>
+			<hr>
+			<li v-for="(value, key, index) in object">
+				{{index}}.{{key}} : {{value}}
+			</li>
+        </ul>
+
+        <script>
+        	new Vue({
+        		el: '#app',
+        		data: {
+        			object: { id: 1111, text: 'Foo', name: 'John' }
+        		}
+        	});
+        </script>
+    </body>
+</html>

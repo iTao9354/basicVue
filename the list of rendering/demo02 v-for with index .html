@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../plugins/vue.js"></script>
+    </head>
+    <body>
+        <ul id="app">
+        	<li v-for="(item, index) in items" v-bind:id="item.id">
+        		{{parentTxt}} -- {{index}} -- {{item.text}}
+        	</li>
+        </ul>
+
+        <script>
+        	new Vue({
+        		el: '#app',
+        		data: {
+        			parentTxt: 'Parent',
+        			items: [
+        				{ id: 1111, text: 'Foo' },
+        				{ id: 2222, text: 'Bar' }
+        			]
+        		}
+        	});
+        </script>
+    </body>
+</html>
